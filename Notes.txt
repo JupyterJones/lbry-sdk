@@ -1,0 +1,55 @@
+
+
+
+fuser 5279/tcp 
+  will print you PID of process bound on that port.
+
+fuser -k 5279/tcp 
+  will kill that process.
+
+
+kill -9 22946
+
+kill $(lsof -t -i:5279)
+
+violently:
+kill -9 $(lsof -t -i:5279)
+
+
+
+libpython3.7-dev
+https://packages.debian.org/unstable/libpython3.7-dev
+
+curl http://127.0.0.1:5279 --data '{"method":"version"}'
+ 
+ jack@jack-desktop:~/Desktop/lbry-sdk$ curl http://127.0.0.1:5279 --data '{"method":"version"}'
+  
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "build": "dev",
+    "desktop": "XFCE",
+    "distro": {
+      "codename": "bionic",
+      "id": "ubuntu",
+      "like": "debian",
+      "version": "18.04",
+      "version_parts": {
+        "build_number": "",
+        "major": "18",
+        "minor": "04"
+      }
+    },
+    "lbrynet_version": "0.47.0",
+    "os_release": "4.15.0-70-generic",
+    "os_system": "Linux",
+    "platform": "Linux-4.15.0-70-generic-x86_64-with-Ubuntu-18.04-bionic",
+    "processor": "x86_64",
+    "python_version": "3.7.3",
+    "torba_version": "0.5.7"
+  }
+}
+
+
+
+
